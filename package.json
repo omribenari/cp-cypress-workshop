@@ -1,0 +1,19 @@
+{
+  "name": "cp-cypress-workshop",
+  "version": "1.0.0",
+  "description": "Cypress workshop based on Counterpart Portal (CP)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.intuit.com:obenari/cp-cypress-workshop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^3.3.1"
+  }
+}
