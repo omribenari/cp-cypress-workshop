@@ -1,6 +1,7 @@
 /// <reference types="Cypress" />
-const url = ''; // url to an individual invoice will be provided to each participate
+const url = '';
 
 it('load page', () => {
-    cy.visit(url)
+    cy.visit(url);
+    cy.contains('button', 'Pay');
 });
