@@ -1,4 +1,5 @@
 /// <reference types="Cypress" />
+import { PayableActions as Actions } from '../actions/PayableActions';
 
 const token =
   '50e78fb1bbd14641babf5eb37926d9f41a27783a2a0c42c7ba638f2c5cd15b79ea52b182aa714e20a4c9fd0acc762629';
@@ -17,12 +18,12 @@ describe('Guest card tests', () => {
   });
 
   it('Load page', () => {
-    cy.contains('button', 'Pay');
+    Actions.getPayButton();
   });
 
   it('Try to pay with empty form', () => {
-    cy.contains('button', 'Pay').click();
-    cy.get('.field-error-message-wrapper').should('have.length', 5);
+    Actions.clickOnPayButton();
+    Actions.haveValidationErrors(5);
   });
 
   it('Pay 1$ with a card', () => {
