@@ -4,7 +4,6 @@ import { LoginActions as Actions } from '../actions/LoginActions';
 
 const token =
   '50e78fb1bbd14641babf5eb37926d9f41a27783a2a0c42c7ba638f2c5cd15b79ea52b182aa714e20a4c9fd0acc762629';
-
 const email = 'cypress1.iamtestpass@gmail.com';
 
 describe('Login tests', () => {
