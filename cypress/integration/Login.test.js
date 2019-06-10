@@ -21,6 +21,7 @@ describe('Login tests', () => {
     });
 
     it('should signed out', () => {
+      Actions.setRoutes();
       Actions.signOut(email);
       Actions.checkIfSignedOut();
     });
