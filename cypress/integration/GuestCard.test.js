@@ -26,20 +26,15 @@ describe('Guest card tests', () => {
     Actions.haveValidationErrors(5);
   });
 
-  it('Pay 1$ with a card', () => {
-    cy.get('.payment-amount-input-wrapper').within(() => {
-      cy.get('label.display-amount').click();
-      cy.get('input')
-        .clear()
-        .type(amountToPay);
-    });
+  it.only('Pay 1$ with a card', () => {
+    Actions.inputTransactionAmount(amountToPay);
 
-    cy.get('input[name="name"]').type(card.nameOnCard);
-    cy.get('input[name="number"]').type(card.cardNumber);
-    cy.get('input[name="expDate"]').type(card.expDate);
-    cy.get('input[name="cvc"]').type(card.cvvCode);
-    cy.get('input[name="zipCode"]').type(card.postalCode);
+    Actions.inputCard_Name(card.nameOnCard);
+    Actions.inputCard_Number(card.cardNumber);
+    Actions.inputCard_ExpDate(card.expDate);
+    Actions.inputCard_Cvv(card.cvvCode);
+    Actions.inputCard_PostalCode(card.postalCode);
 
-    cy.get('.cpButton.pay').click();
+    Actions.clickOnPayButton();
   });
 });
