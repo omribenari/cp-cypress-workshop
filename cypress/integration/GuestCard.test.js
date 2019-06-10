@@ -25,7 +25,7 @@ describe('Guest card tests', () => {
     cy.get('.field-error-message-wrapper').should('have.length', 5);
   });
 
-  it.only('Pay 1$ with a card', () => {
+  it('Pay 1$ with a card', () => {
     cy.get('.payment-amount-input-wrapper').within(() => {
       cy.get('label.display-amount').click();
       cy.get('input')
