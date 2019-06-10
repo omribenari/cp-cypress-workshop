@@ -26,7 +26,7 @@ describe('Guest card tests', () => {
     Actions.haveValidationErrors(5);
   });
 
-  it.only('Pay 1$ with a card', () => {
+  it('Pay 1$ with a card', () => {
     Actions.inputTransactionAmount(amountToPay);
 
     Actions.inputCard_Name(card.nameOnCard);
