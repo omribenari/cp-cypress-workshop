@@ -5,8 +5,8 @@ declare namespace Cypress {
     /**
      * login user
      * @example
-     * cy.login() // use default credentials from env file
-     * cy.login('name@domain.com', 'Passw0rd!1') // custom credentials
+     *   cy.login() // use default credentials from env file
+     *   cy.login(email, password) // custom credentials
      */
     login(usr?: string, pw?: string): Chainable<any>;
   }
