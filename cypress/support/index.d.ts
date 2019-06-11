@@ -9,5 +9,14 @@ declare namespace Cypress {
      *   cy.login(email, password) // custom credentials
      */
     login(usr?: string, pw?: string): Chainable<any>;
+
+    /**
+     * access the redux store in its current state
+     * @example
+     * cy.getReduxStore().then(store => {
+     *   actions.getRootElement().contains(store.invoice.invoiceNumber);
+     * }
+     */
+    getReduxStore(): Chainable<any>;
   }
 }

@@ -49,3 +49,10 @@ Cypress.Commands.add('login', (usr = user.email, pw = user.password) => {
       return response;
     });
 });
+
+Cypress.Commands.add('getReduxStore', () => {
+  return cy
+    .window()
+    .its('__NEXT_REDUX_STORE__')
+    .invoke('getState');
+});
