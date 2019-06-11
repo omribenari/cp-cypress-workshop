@@ -15,20 +15,31 @@ describe('Invoice summary tests', () => {
     actions.getSummaryElement().contains('Invoice total');
 
     cy.getReduxStore().then(store => {
-      actions.getSummaryElement().contains(store.invoice.invoiceNumber);
-      const amount = formatCurrencyNumber(
-        store.invoice.currency,
-        store.invoice.invoiceAmount
-      );
-      actions.getSummaryElement().contains(amount);
-      if (store.invoice.isPartiallyPaid) {
+      const {
+        invoice: {
+          invoiceNumber,
+          currency,
+          invoiceAmount,
+          isPartiallyPaid,
+          isFullyPaid,
+          invoiceDueDate
+        }
+      } = store;
+
+      actions.getSummaryElement().contains(invoiceNumber);
+
+      const expectedAmount = formatCurrencyNumber(currency, invoiceAmount);
+      actions.getSummaryElement().contains(expectedAmount);
+
+      if (isPartiallyPaid) {
         actions.getSummaryElement().contains('Partially paid');
       }
-      if (store.invoice.isFullyPaid) {
+      if (isFullyPaid) {
         actions.getSummaryElement().contains('Fully paid');
       }
-      const date = formatDate(store.invoice.invoiceDueDate);
-      actions.getSummaryElement().contains(date);
+
+      const expectedDate = formatDate(invoiceDueDate);
+      actions.getSummaryElement().contains(expectedDate);
     });
   });
 });
