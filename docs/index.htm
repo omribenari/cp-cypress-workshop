@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+  <meta content="origin-when-cross-origin" name="referrer">
+
+  <link crossorigin="anonymous"
+        href="./assets/frameworks-86cd322445303c5c004f8612ba4b203e9dc7e7759558ffb5175639c167a7aed0.css"
+        media="all" rel="stylesheet">
+  <link crossorigin="anonymous"
+        href="./assets/github-8f51e6850027ed8c6ec35a281c258fd48341694f143156fb71c567a0f9ef0a7b.css"
+        media="all" rel="stylesheet">
+
+
+  <meta name="viewport" content="width=device-width">
+
+  <title>SSR Workshop Branches Compare</title>
+
+
+  <meta name="diff-view" content="split" data-pjax-transient="">
+
+
+  <link rel="icon" type="image/x-icon" class="js-site-favicon" href="https://github.intuit.com/favicon-ent.ico">
+
+
+  <style>
+    .diff-branch {
+      margin: 15px;
+      border: 1px solid black;
+    }
+
+    .diff-branch-header {
+      display: flex;
+      align-items: center;
+      background-color: #fafbfc;
+      padding: 10px;
+      justify-content: space-between;
+    }
+
+    .diff-branch.show > .diff-branch-header {
+      border-bottom: 1px solid lightgray;
+    }
+
+    .js-diff-progressive-container {
+      /*border: 5px solid #e1e4e8;*/
+      padding: 10px;
+    }
+
+    .diff-branch .diff-branch-header > button {
+      width: 100px;
+      height: 40px;
+    }
+
+    .diff-branch.show .diff-branch-header > button.Details-diff > .Details-diff-branch-content--shown {
+      display: none;
+    }
+
+    .diff-branch:not(.show) .diff-branch-header > button.Details-diff > .Details-diff-branch-content--hidden {
+      display: none;
+    }
+
+    .diff-branch:not(.show) .js-diff-progressive-container {
+      display: none;
+    }
+
+    .diff-branch-title {
+      margin: 0;
+      padding: 0;
+    }
+
+    .file-info a {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .container {
+      padding: 0 !important;
+    }
+
+  </style>
+
+</head>
+
+<body class="logged-in enterprise env-production emoji-size-boost full-width">
+
+
+<div role="main">
+
+  <div itemscope="" itemtype="http://schema.org/SoftwareSourceCode">
+    <div id="js-repo-pjax-container" data-pjax-container="">
+
+
+      <div class="container new-discussion-timeline experiment-repo-nav">
+        <div class="repository-content">
+
+
+          <style type="text/css" media="screen" id="issue-labels-style">
+            span.labelstyle-ee0701, .linked-labelstyle-ee0701 {
+              background-color: #ee0701 !important;
+              color: #fff !important;
+            }
+
+            .labelstyle-ee0701.selected {
+              background-color: #ee0701 !important;
+              color: #fff !important;
+            }
+
+            .label-select-menu .labelstyle-ee0701.selected {
+              background: rgba(238, 7, 1, 0.12) !important;
+              color: #990400 !important;
+            }
+
+            span.labelstyle-cccccc, .linked-labelstyle-cccccc {
+              background-color: #cccccc !important;
+              color: #333333 !important;
+            }
+
+            .labelstyle-cccccc.selected {
+              background-color: #cccccc !important;
+              color: #333333 !important;
+            }
+
+            .label-select-menu .labelstyle-cccccc.selected {
+              background: rgba(204, 204, 204, 0.12) !important;
+              color: #999999 !important;
+            }
+
+            span.labelstyle-84b6eb, .linked-labelstyle-84b6eb {
+              background-color: #84b6eb !important;
+              color: #1c2733 !important;
+            }
+
+            .labelstyle-84b6eb.selected {
+              background-color: #84b6eb !important;
+              color: #1c2733 !important;
+            }
+
+            .label-select-menu .labelstyle-84b6eb.selected {
+              background: rgba(132, 182, 235, 0.12) !important;
+              color: #557699 !important;
+            }
+
+            span.labelstyle-7057ff, .linked-labelstyle-7057ff {
+              background-color: #7057ff !important;
+              color: #fff !important;
+            }
+
+            .labelstyle-7057ff.selected {
+              background-color: #7057ff !important;
+              color: #fff !important;
+            }
+
+            .label-select-menu .labelstyle-7057ff.selected {
+              background: rgba(112, 87, 255, 0.12) !important;
+              color: #433499 !important;
+            }
+
+            span.labelstyle-33aa3f, .linked-labelstyle-33aa3f {
+              background-color: #33aa3f !important;
+              color: #fff !important;
+            }
+
+            .labelstyle-33aa3f.selected {
+              background-color: #33aa3f !important;
+              color: #fff !important;
+            }
+
+            .label-select-menu .labelstyle-33aa3f.selected {
+              background: rgba(51, 170, 63, 0.12) !important;
+              color: #2d9938 !important;
+            }
+
+            span.labelstyle-e6e6e6, .linked-labelstyle-e6e6e6 {
+              background-color: #e6e6e6 !important;
+              color: #333333 !important;
+            }
+
+            .labelstyle-e6e6e6.selected {
+              background-color: #e6e6e6 !important;
+              color: #333333 !important;
+            }
+
+            .label-select-menu .labelstyle-e6e6e6.selected {
+              background: rgba(230, 230, 230, 0.12) !important;
+              color: #999999 !important;
+            }
+
+            span.labelstyle-cc317c, .linked-labelstyle-cc317c {
+              background-color: #cc317c !important;
+              color: #fff !important;
+            }
+
+            .labelstyle-cc317c.selected {
+              background-color: #cc317c !important;
+              color: #fff !important;
+            }
+
+            .label-select-menu .labelstyle-cc317c.selected {
+              background: rgba(204, 49, 124, 0.12) !important;
+              color: #99245c !important;
+            }
+
+            span.labelstyle-ffffff, .linked-labelstyle-ffffff {
+              background-color: #ffffff !important;
+              color: #333333 !important;
+            }
+
+            .labelstyle-ffffff.selected {
+              background-color: #ffffff !important;
+              color: #333333 !important;
+            }
+
+            .label-select-menu .labelstyle-ffffff.selected {
+              background: rgba(255, 255, 255, 0.12) !important;
+              color: #999999 !important;
+            }
+          </style>
+
+
+          <div id="files_bucket" class="files-bucket">
+            <div id="diff" class="uncommentable">
+
+
+              <div id="files" class="diff-view diff-branch">
+                <div class="diff-branch-header">
+                  <h1 class="diff-branch-title">01 - setup</h1>
+                  <button type="button" class="Details-diff" aria-label="Toggle diff text" aria-expanded="true">
+                    <svg aria-hidden="true"
+                         class="octicon octicon-chevron-down Details-diff-branch-content&#45;&#45;shown" height="16"
+                         version="1.1" viewBox="0 0 10 16" width="10">
+                      <path fill-rule="evenodd" d="M5 11L0 6l1.5-1.5L5 8.25 8.5 4.5 10 6z"></path>
+                    </svg>
+                    <svg aria-hidden="true"
+                         class="octicon octicon-chevron-up Details-diff-branch-content&#45;&#45;hidden" height="16"
+                         version="1.1" viewBox="0 0 10 16" width="10">
+                      <path fill-rule="evenodd" d="M10 10l-1.5 1.5L5 7.75 1.5 11.5 0 10l5-5z"></path>
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="js-diff-progressive-container">
+                  <div id="diff-2" class="file js-file js-details-container Details show-inline-notes">
+                    <div class="file-header js-file-header" data-path="package.json" data-short-path="b9cfc7f" data-anchor="diff-b9cfc7f2cdf78a7f4b91a753d10865a2">
+                      <div class="file-actions">
+
+        <span class="show-file-notes pt-1">
+          <label data-children-count="1">
+            <input type="checkbox" checked="checked" class="js-toggle-file-notes">
+            Show comments
+          </label>
+        </span>
+
+                        <a href="/rshemesh/next-ssr-workshop/blob/9a26f5bf17f2a7b85ba9de1ccaf46379c94132ee/package.json" class="btn btn-sm tooltipped tooltipped-nw" rel="nofollow" aria-label="View the whole file at version 9a26f5b ">View</a>
+
+
+                        <button type="button" class="btn-octicon p-1 pr-2 js-details-target" aria-label="Toggle diff text" aria-expanded="true">
+                          <svg class="octicon octicon-chevron-down Details-content--shown" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5 11L0 6l1.5-1.5L5 8.25 8.5 4.5 10 6l-5 5z"></path></svg>
+                          <svg class="octicon octicon-chevron-up Details-content--hidden" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10 10l-1.5 1.5L5 7.75 1.5 11.5 0 10l5-5 5 5z"></path></svg>
+                        </button>
+                      </div>
+                      <div class="file-info">
+                        <span class="diffstat tooltipped tooltipped-e" aria-label="2 additions &amp; 4 deletions">6 <span class="block-diff-added"></span><span class="block-diff-deleted"></span><span class="block-diff-deleted"></span><span class="block-diff-deleted"></span><span class="block-diff-neutral"></span></span>
+
+                        <a href="#diff-b9cfc7f2cdf78a7f4b91a753d10865a2" class="link-gray-dark" title="package.json">package.json</a>
+
+
+                      </div>
+                    </div>
+                    <div class="js-file-content Details-content--shown">
+
+                      <div class="data highlight js-blob-wrapper" style="overflow-x: auto">
+                        <table class="diff-table tab-size  file-diff-split" data-tab-size="8">
+                          <colgroup>
+                            <col width="40">
+                            <col>
+                            <col width="40">
+                            <col>
+                          </colgroup>
+
+                          <tbody><tr class="js-expandable-line" data-position="0">
+                            <td class="blob-num blob-num-expandable" colspan="1">
+                              <a href="#diff-b9cfc7f2cdf78a7f4b91a753d10865a2" class="diff-expander js-expand" title="Expand" aria-label="Expand" data-url="/rshemesh/next-ssr-workshop/blob_excerpt/3c6f9df0b0287dbdce91a838b2ee4f6e567e5a67?diff=split&amp;in_wiki_context=&amp;left_hunk_size=10&amp;mode=100644&amp;next_line_num_left=3&amp;next_line_num_right=3&amp;path=package.json&amp;prev_line_num_left=&amp;prev_line_num_right=&amp;right_hunk_size=7" data-left-range="1-2" data-right-range="1-2">
+                                <svg class="octicon octicon-unfold" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11.5 7.5L14 10c0 .55-.45 1-1 1H9v-1h3.5l-2-2h-7l-2 2H5v1H1c-.55 0-1-.45-1-1l2.5-2.5L0 5c0-.55.45-1 1-1h4v1H1.5l2 2h7l2-2H9V4h4c.55 0 1 .45 1 1l-2.5 2.5zM6 6h2V3h2L7 0 4 3h2v3zm2 3H6v3H4l3 3 3-3H8V9z"></path></svg>
+                              </a>
+                            </td>
+                            <td class="blob-code blob-code-inner blob-code-hunk" colspan="3">@@ -3,10 +3,7 @@</td>
+                          </tr>
+
+
+                          <tr>
+                            <td class="blob-num blob-num-context js-linkable-line-number" id="diff-b9cfc7f2cdf78a7f4b91a753d10865a2L3" data-line-number="3"></td>
+
+                            <td class="code-review blob-code blob-code-context">
+
+                              <span class="blob-code-inner">   <span class="pl-s"><span class="pl-pds">"</span>version<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>0.1.0<span class="pl-pds">"</span></span>,</span>
+
+                            </td>
+
+                            <td class="blob-num blob-num-context js-linkable-line-number" id="diff-b9cfc7f2cdf78a7f4b91a753d10865a2R3" data-line-number="3"></td>
+
+                            <td class="code-review blob-code blob-code-context">
+
+                              <span class="blob-code-inner">   <span class="pl-s"><span class="pl-pds">"</span>version<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>0.1.0<span class="pl-pds">"</span></span>,</span>
+
+                            </td>
+                          </tr>
+
+
+
+
+                          <tr>
+                            <td class="blob-num blob-num-context js-linkable-line-number" id="diff-b9cfc7f2cdf78a7f4b91a753d10865a2L4" data-line-number="4"></td>
+
+                            <td class="code-review blob-code blob-code-context">
+
+                              <span class="blob-code-inner">   <span class="pl-s"><span class="pl-pds">"</span>proxy<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>http://localhost:8888<span class="pl-pds">"</span></span>,</span>
+
+                            </td>
+
+                            <td class="blob-num blob-num-context js-linkable-line-number" id="diff-b9cfc7f2cdf78a7f4b91a753d10865a2R4" data-line-number="4"></td>
+
+                            <td class="code-review blob-code blob-code-context">
+
+                              <span class="blob-code-inner">   <span class="pl-s"><span class="pl-pds">"</span>proxy<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>http://localhost:8888<span class="pl-pds">"</span></span>,</span>
+
+                            </td>
+                          </tr>
+
+
+
+
+                          <tr>
+                            <td class="blob-num blob-num-context js-linkable-line-number" id="diff-b9cfc7f2cdf78a7f4b91a753d10865a2L5" data-line-number="5"></td>
+
+                            <td class="code-review blob-code blob-code-context">
+
+                              <span class="blob-code-inner">   <span class="pl-s"><span class="pl-pds">"</span>scripts<span class="pl-pds">"</span></span>: {</span>
+
+                            </td>
+
+                            <td class="blob-num blob-num-context js-linkable-line-number" id="diff-b9cfc7f2cdf78a7f4b91a753d10865a2R5" data-line-number="5"></td>
+
+                            <td class="code-review blob-code blob-code-context">
+
+                              <span class="blob-code-inner">   <span class="pl-s"><span class="pl-pds">"</span>scripts<span class="pl-pds">"</span></span>: {</span>
+
+                            </td>
+                          </tr>
+
+
+
+
+                          <tr>
+                            <td class="blob-num blob-num-deletion js-linkable-line-number" id="diff-b9cfc7f2cdf78a7f4b91a753d10865a2L6" data-line-number="6"></td>
+
+                            <td class="code-review blob-code blob-code-deletion">
+
+                              <span class="blob-code-inner">-    <span class="pl-s"><span class="pl-pds">"</span>start<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>react-scripts start<span class="pl-pds">"</span></span>,</span>
+
+                            </td>
+
+                            <td class="blob-num blob-num-addition js-linkable-line-number" id="diff-b9cfc7f2cdf78a7f4b91a753d10865a2R6" data-line-number="6"></td>
+
+                            <td class="code-review blob-code blob-code-addition">
+
+                              <span class="blob-code-inner">+    <span class="pl-s"><span class="pl-pds">"</span>start<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>next dev<span class="pl-pds">"</span></span></span>
+
+                            </td>
+                          </tr>
+
+
+
+
+                          <tr>
+                            <td class="blob-num blob-num-deletion js-linkable-line-number" id="diff-b9cfc7f2cdf78a7f4b91a753d10865a2L7" data-line-number="7"></td>
+
+                            <td class="code-review blob-code blob-code-deletion">
+
+                              <span class="blob-code-inner">-    <span class="pl-s"><span class="pl-pds">"</span>build<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>react-scripts build<span class="pl-pds">"</span></span>,</span>
+
+                            </td>
+
+                            <td class="blob-num blob-num-empty empty-cell"></td>
+                            <td class="blob-code blob-code-empty empty-cell"></td>
+                          </tr>
+
+
+
+
+                          <tr>
+                            <td class="blob-num blob-num-deletion js-linkable-line-number" id="diff-b9cfc7f2cdf78a7f4b91a753d10865a2L8" data-line-number="8"></td>
+
+                            <td class="code-review blob-code blob-code-deletion">
+
+                              <span class="blob-code-inner">-    <span class="pl-s"><span class="pl-pds">"</span>test<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>react-scripts test<span class="pl-pds">"</span></span>,</span>
+
+                            </td>
+
+                            <td class="blob-num blob-num-empty empty-cell"></td>
+                            <td class="blob-code blob-code-empty empty-cell"></td>
+                          </tr>
+
+
+
+
+                          <tr>
+                            <td class="blob-num blob-num-deletion js-linkable-line-number" id="diff-b9cfc7f2cdf78a7f4b91a753d10865a2L9" data-line-number="9"></td>
+
+                            <td class="code-review blob-code blob-code-deletion">
+
+                              <span class="blob-code-inner">-    <span class="pl-s"><span class="pl-pds">"</span>eject<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>react-scripts eject<span class="pl-pds">"</span></span></span>
+
+                            </td>
+
+                            <td class="blob-num blob-num-empty empty-cell"></td>
+                            <td class="blob-code blob-code-empty empty-cell"></td>
+                          </tr>
+
+
+
+
+                          <tr>
+                            <td class="blob-num blob-num-context js-linkable-line-number" id="diff-b9cfc7f2cdf78a7f4b91a753d10865a2L10" data-line-number="10"></td>
+
+                            <td class="code-review blob-code blob-code-context">
+
+                              <span class="blob-code-inner">   },</span>
+
+                            </td>
+
+                            <td class="blob-num blob-num-context js-linkable-line-number" id="diff-b9cfc7f2cdf78a7f4b91a753d10865a2R7" data-line-number="7"></td>
+
+                            <td class="code-review blob-code blob-code-context">
+
+                              <span class="blob-code-inner">   },</span>
+
+                            </td>
+                          </tr>
+
+
+
+
+                          <tr>
+                            <td class="blob-num blob-num-context js-linkable-line-number" id="diff-b9cfc7f2cdf78a7f4b91a753d10865a2L11" data-line-number="11"></td>
+
+                            <td class="code-review blob-code blob-code-context">
+
+                              <span class="blob-code-inner">   <span class="pl-s"><span class="pl-pds">"</span>eslintConfig<span class="pl-pds">"</span></span>: {</span>
+
+                            </td>
+
+                            <td class="blob-num blob-num-context js-linkable-line-number" id="diff-b9cfc7f2cdf78a7f4b91a753d10865a2R8" data-line-number="8"></td>
+
+                            <td class="code-review blob-code blob-code-context">
+
+                              <span class="blob-code-inner">   <span class="pl-s"><span class="pl-pds">"</span>eslintConfig<span class="pl-pds">"</span></span>: {</span>
+
+                            </td>
+                          </tr>
+
+
+
+
+                          <tr>
+                            <td class="blob-num blob-num-context js-linkable-line-number" id="diff-b9cfc7f2cdf78a7f4b91a753d10865a2L12" data-line-number="12"></td>
+
+                            <td class="code-review blob-code blob-code-context">
+
+                              <span class="blob-code-inner">     <span class="pl-s"><span class="pl-pds">"</span>extends<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>react-app<span class="pl-pds">"</span></span></span>
+
+                            </td>
+
+                            <td class="blob-num blob-num-context js-linkable-line-number" id="diff-b9cfc7f2cdf78a7f4b91a753d10865a2R9" data-line-number="9"></td>
+
+                            <td class="code-review blob-code blob-code-context">
+
+                              <span class="blob-code-inner">     <span class="pl-s"><span class="pl-pds">"</span>extends<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>react-app<span class="pl-pds">"</span></span></span>
+
+                            </td>
+                          </tr>
+
+
+
+                          <tr class="js-expandable-line" data-position="12">
+                            <td class="blob-num blob-num-expandable" colspan="1">
+                              <a href="#diff-b9cfc7f2cdf78a7f4b91a753d10865a2" class="diff-expander js-expand" title="Expand" aria-label="Expand" data-url="/rshemesh/next-ssr-workshop/blob_excerpt/3c6f9df0b0287dbdce91a838b2ee4f6e567e5a67?diff=split&amp;in_wiki_context=&amp;left_hunk_size=6&amp;mode=100644&amp;next_line_num_left=26&amp;next_line_num_right=23&amp;path=package.json&amp;prev_line_num_left=12&amp;prev_line_num_right=9&amp;right_hunk_size=7" data-left-range="13-25" data-right-range="10-22">
+                                <svg class="octicon octicon-unfold" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11.5 7.5L14 10c0 .55-.45 1-1 1H9v-1h3.5l-2-2h-7l-2 2H5v1H1c-.55 0-1-.45-1-1l2.5-2.5L0 5c0-.55.45-1 1-1h4v1H1.5l2 2h7l2-2H9V4h4c.55 0 1 .45 1 1l-2.5 2.5zM6 6h2V3h2L7 0 4 3h2v3zm2 3H6v3H4l3 3 3-3H8V9z"></path></svg>
+                              </a>
+                            </td>
+                            <td class="blob-code blob-code-inner blob-code-hunk" colspan="3">@@ -26,6 +23,7 @@</td>
+                          </tr>
+
+
+                          <tr>
+                            <td class="blob-num blob-num-context js-linkable-line-number" id="diff-b9cfc7f2cdf78a7f4b91a753d10865a2L26" data-line-number="26"></td>
+
+                            <td class="code-review blob-code blob-code-context">
+
+                              <span class="blob-code-inner">   <span class="pl-s"><span class="pl-pds">"</span>dependencies<span class="pl-pds">"</span></span>: {</span>
+
+                            </td>
+
+                            <td class="blob-num blob-num-context js-linkable-line-number" id="diff-b9cfc7f2cdf78a7f4b91a753d10865a2R23" data-line-number="23"></td>
+
+                            <td class="code-review blob-code blob-code-context">
+
+                              <span class="blob-code-inner">   <span class="pl-s"><span class="pl-pds">"</span>dependencies<span class="pl-pds">"</span></span>: {</span>
+
+                            </td>
+                          </tr>
+
+
+
+
+                          <tr>
+                            <td class="blob-num blob-num-context js-linkable-line-number" id="diff-b9cfc7f2cdf78a7f4b91a753d10865a2L27" data-line-number="27"></td>
+
+                            <td class="code-review blob-code blob-code-context">
+
+                              <span class="blob-code-inner">     <span class="pl-s"><span class="pl-pds">"</span>axios<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>^0.18.0<span class="pl-pds">"</span></span>,</span>
+
+                            </td>
+
+                            <td class="blob-num blob-num-context js-linkable-line-number" id="diff-b9cfc7f2cdf78a7f4b91a753d10865a2R24" data-line-number="24"></td>
+
+                            <td class="code-review blob-code blob-code-context">
+
+                              <span class="blob-code-inner">     <span class="pl-s"><span class="pl-pds">"</span>axios<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>^0.18.0<span class="pl-pds">"</span></span>,</span>
+
+                            </td>
+                          </tr>
+
+
+
+
+                          <tr>
+                            <td class="blob-num blob-num-context js-linkable-line-number" id="diff-b9cfc7f2cdf78a7f4b91a753d10865a2L28" data-line-number="28"></td>
+
+                            <td class="code-review blob-code blob-code-context ">
+
+                              <span class="blob-code-inner">     <span class="pl-s"><span class="pl-pds">"</span>express<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>^4.17.0<span class="pl-pds">"</span></span>,</span>
+
+                            </td>
+
+                            <td class="blob-num blob-num-context js-linkable-line-number" id="diff-b9cfc7f2cdf78a7f4b91a753d10865a2R25" data-line-number="25"></td>
+
+                            <td class="code-review blob-code blob-code-context">
+
+                              <span class="blob-code-inner">     <span class="pl-s"><span class="pl-pds">"</span>express<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>^4.17.0<span class="pl-pds">"</span></span>,</span>
+
+                            </td>
+                          </tr>
+
+
+
+
+                          <tr>
+                            <td class="blob-num blob-num-empty empty-cell"></td>
+                            <td class="blob-code blob-code-empty empty-cell"></td>
+
+                            <td class="blob-num blob-num-addition js-linkable-line-number" id="diff-b9cfc7f2cdf78a7f4b91a753d10865a2R26" data-line-number="26"></td>
+
+                            <td class="code-review blob-code blob-code-addition">
+
+                              <span class="blob-code-inner">+    <span class="pl-s"><span class="pl-pds">"</span>next<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>^8.1.0<span class="pl-pds">"</span></span>,</span>
+
+                            </td>
+                          </tr>
+
+
+
+
+                          <tr>
+                            <td class="blob-num blob-num-context js-linkable-line-number" id="diff-b9cfc7f2cdf78a7f4b91a753d10865a2L29" data-line-number="29"></td>
+
+                            <td class="code-review blob-code blob-code-context ">
+
+                              <span class="blob-code-inner">     <span class="pl-s"><span class="pl-pds">"</span>react<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>^16.8.6<span class="pl-pds">"</span></span>,</span>
+
+                            </td>
+
+                            <td class="blob-num blob-num-context js-linkable-line-number" id="diff-b9cfc7f2cdf78a7f4b91a753d10865a2R27" data-line-number="27"></td>
+
+                            <td class="code-review blob-code blob-code-context">
+
+                              <span class="blob-code-inner">     <span class="pl-s"><span class="pl-pds">"</span>react<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>^16.8.6<span class="pl-pds">"</span></span>,</span>
+
+                            </td>
+                          </tr>
+
+
+
+
+                          <tr>
+                            <td class="blob-num blob-num-context js-linkable-line-number" id="diff-b9cfc7f2cdf78a7f4b91a753d10865a2L30" data-line-number="30"></td>
+
+                            <td class="code-review blob-code blob-code-context ">
+
+                              <span class="blob-code-inner">     <span class="pl-s"><span class="pl-pds">"</span>react-dom<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>^16.8.6<span class="pl-pds">"</span></span>,</span>
+
+                            </td>
+
+                            <td class="blob-num blob-num-context js-linkable-line-number" id="diff-b9cfc7f2cdf78a7f4b91a753d10865a2R28" data-line-number="28"></td>
+
+                            <td class="code-review blob-code blob-code-context">
+
+                              <span class="blob-code-inner">     <span class="pl-s"><span class="pl-pds">"</span>react-dom<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>^16.8.6<span class="pl-pds">"</span></span>,</span>
+
+                            </td>
+                          </tr>
+
+
+
+
+                          <tr>
+                            <td class="blob-num blob-num-context js-linkable-line-number" id="diff-b9cfc7f2cdf78a7f4b91a753d10865a2L31" data-line-number="31"></td>
+
+                            <td class="code-review blob-code blob-code-context ">
+
+                              <span class="blob-code-inner">     <span class="pl-s"><span class="pl-pds">"</span>react-redux<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>^7.0.3<span class="pl-pds">"</span></span>,</span>
+
+                            </td>
+
+                            <td class="blob-num blob-num-context js-linkable-line-number" id="diff-b9cfc7f2cdf78a7f4b91a753d10865a2R29" data-line-number="29"></td>
+
+                            <td class="code-review blob-code blob-code-context">
+
+                              <span class="blob-code-inner">     <span class="pl-s"><span class="pl-pds">"</span>react-redux<span class="pl-pds">"</span></span>: <span class="pl-s"><span class="pl-pds">"</span>^7.0.3<span class="pl-pds">"</span></span>,</span>
+
+                            </td>
+                          </tr>
+
+
+
+
+                          <tr class="js-expandable-line">
+                            <td class="blob-num blob-num-expandable" colspan="1">
+                              <a href="#diff-b9cfc7f2cdf78a7f4b91a753d10865a2" class="diff-expander js-expand" title="Expand" aria-label="Expand" data-url="/rshemesh/next-ssr-workshop/blob_excerpt/3c6f9df0b0287dbdce91a838b2ee4f6e567e5a67?diff=split&amp;in_wiki_context=&amp;mode=100644&amp;path=package.json&amp;prev_line_num_left=31&amp;prev_line_num_right=29" data-left-range="32-38" data-right-range="30-38">
+                                <svg class="octicon octicon-unfold" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11.5 7.5L14 10c0 .55-.45 1-1 1H9v-1h3.5l-2-2h-7l-2 2H5v1H1c-.55 0-1-.45-1-1l2.5-2.5L0 5c0-.55.45-1 1-1h4v1H1.5l2 2h7l2-2H9V4h4c.55 0 1 .45 1 1l-2.5 2.5zM6 6h2V3h2L7 0 4 3h2v3zm2 3H6v3H4l3 3 3-3H8V9z"></path></svg>
+                              </a>
+                            </td>
+                            <td class="blob-code blob-code-expandable" colspan="3"></td>
+                          </tr>
+
+                          </tbody></table>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div id="diff-3" class="file js-file js-details-container Details show-inline-notes">
+                    <div class="file-header js-file-header" data-path="pages/index.js" data-short-path="e14ec8f" data-anchor="diff-e14ec8fd2b038fbccea5f8090d26ace4">
+                      <div class="file-actions">
+
+        <span class="show-file-notes pt-1">
+          <label data-children-count="1">
+            <input type="checkbox" checked="checked" class="js-toggle-file-notes">
+            Show comments
+          </label>
+        </span>
+
+                        <a href="/rshemesh/next-ssr-workshop/blob/9a26f5bf17f2a7b85ba9de1ccaf46379c94132ee/pages/index.js" class="btn btn-sm tooltipped tooltipped-nw" rel="nofollow" aria-label="View the whole file at version 9a26f5b ">View</a>
+
+
+                        <button type="button" class="btn-octicon p-1 pr-2 js-details-target" aria-label="Toggle diff text" aria-expanded="true">
+                          <svg class="octicon octicon-chevron-down Details-content--shown" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5 11L0 6l1.5-1.5L5 8.25 8.5 4.5 10 6l-5 5z"></path></svg>
+                          <svg class="octicon octicon-chevron-up Details-content--hidden" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10 10l-1.5 1.5L5 7.75 1.5 11.5 0 10l5-5 5 5z"></path></svg>
+                        </button>
+                      </div>
+                      <div class="file-info">
+                        <span class="diffstat tooltipped tooltipped-e" aria-label="11 additions &amp; 0 deletions">11 <span class="block-diff-added"></span><span class="block-diff-added"></span><span class="block-diff-added"></span><span class="block-diff-added"></span><span class="block-diff-added"></span></span>
+
+                        <a href="#diff-e14ec8fd2b038fbccea5f8090d26ace4" class="link-gray-dark" title="pages/index.js">pages/index.js</a>
+
+
+                      </div>
+                    </div>
+                    <div class="js-file-content Details-content--shown">
+
+                      <div class="data highlight js-blob-wrapper" style="overflow-x: auto">
+                        <table class="diff-table tab-size  file-diff-split" data-tab-size="8">
+                          <colgroup>
+                            <col width="40">
+                            <col>
+                            <col width="40">
+                            <col>
+                          </colgroup>
+
+                          <tbody><tr data-position="0">
+                            <td id="diff-e14ec8fd2b038fbccea5f8090d26ace4L-1" class="blob-num blob-num-hunk" data-line-number="..."></td>
+                            <td class="blob-code blob-code-inner blob-code-hunk" colspan="3">@@ -0,0 +1,11 @@</td>
+                          </tr>
+
+
+                          <tr>
+                            <td class="blob-num blob-num-empty empty-cell"></td>
+                            <td class="blob-code blob-code-empty empty-cell"></td>
+
+                            <td class="blob-num blob-num-addition js-linkable-line-number" id="diff-e14ec8fd2b038fbccea5f8090d26ace4R1" data-line-number="1"></td>
+
+                            <td class="code-review blob-code blob-code-addition">
+
+                              <span class="blob-code-inner">+<span class="pl-k">import</span> <span class="pl-smi">React</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>react<span class="pl-pds">'</span></span>;</span>
+
+                            </td>
+                          </tr>
+
+
+
+
+                          <tr>
+                            <td class="blob-num blob-num-empty empty-cell"></td>
+                            <td class="blob-code blob-code-empty empty-cell"></td>
+
+                            <td class="blob-num blob-num-addition js-linkable-line-number" id="diff-e14ec8fd2b038fbccea5f8090d26ace4R2" data-line-number="2"></td>
+
+                            <td class="code-review blob-code blob-code-addition">
+
+                              <span class="blob-code-inner">+</span>
+
+                            </td>
+                          </tr>
+
+
+
+
+                          <tr>
+                            <td class="blob-num blob-num-empty empty-cell"></td>
+                            <td class="blob-code blob-code-empty empty-cell"></td>
+
+                            <td class="blob-num blob-num-addition js-linkable-line-number" id="diff-e14ec8fd2b038fbccea5f8090d26ace4R3" data-line-number="3"></td>
+
+                            <td class="code-review blob-code blob-code-addition">
+
+                              <span class="blob-code-inner">+<span class="pl-k">const</span> <span class="pl-c1">Index</span> <span class="pl-k">=</span> () <span class="pl-k">=&gt;</span> {</span>
+
+                            </td>
+                          </tr>
+
+
+
+
+                          <tr>
+                            <td class="blob-num blob-num-empty empty-cell"></td>
+                            <td class="blob-code blob-code-empty empty-cell"></td>
+
+                            <td class="blob-num blob-num-addition js-linkable-line-number" id="diff-e14ec8fd2b038fbccea5f8090d26ace4R4" data-line-number="4"></td>
+
+                            <td class="code-review blob-code blob-code-addition">
+
+                              <span class="blob-code-inner">+  <span class="pl-k">return</span> (</span>
+
+                            </td>
+                          </tr>
+
+
+
+
+                          <tr>
+                            <td class="blob-num blob-num-empty empty-cell"></td>
+                            <td class="blob-code blob-code-empty empty-cell"></td>
+
+                            <td class="blob-num blob-num-addition js-linkable-line-number" id="diff-e14ec8fd2b038fbccea5f8090d26ace4R5" data-line-number="5"></td>
+
+                            <td class="code-review blob-code blob-code-addition">
+
+                              <span class="blob-code-inner">+    <span class="pl-k">&lt;</span>div<span class="pl-k">&gt;</span></span>
+
+                            </td>
+                          </tr>
+
+
+
+
+                          <tr>
+                            <td class="blob-num blob-num-empty empty-cell"></td>
+                            <td class="blob-code blob-code-empty empty-cell"></td>
+
+                            <td class="blob-num blob-num-addition js-linkable-line-number" id="diff-e14ec8fd2b038fbccea5f8090d26ace4R6" data-line-number="6"></td>
+
+                            <td class="code-review blob-code blob-code-addition">
+
+                              <span class="blob-code-inner">+      This is <span class="pl-smi">Next</span>.<span class="pl-smi">js</span></span>
+
+                            </td>
+                          </tr>
+
+
+
+
+                          <tr>
+                            <td class="blob-num blob-num-empty empty-cell"></td>
+                            <td class="blob-code blob-code-empty empty-cell"></td>
+
+                            <td class="blob-num blob-num-addition js-linkable-line-number" id="diff-e14ec8fd2b038fbccea5f8090d26ace4R7" data-line-number="7"></td>
+
+                            <td class="code-review blob-code blob-code-addition">
+
+                              <span class="blob-code-inner">+    <span class="pl-k">&lt;</span><span class="pl-k">/</span>div<span class="pl-k">&gt;</span></span>
+
+                            </td>
+                          </tr>
+
+
+
+
+                          <tr>
+                            <td class="blob-num blob-num-empty empty-cell"></td>
+                            <td class="blob-code blob-code-empty empty-cell"></td>
+
+                            <td class="blob-num blob-num-addition js-linkable-line-number" id="diff-e14ec8fd2b038fbccea5f8090d26ace4R8" data-line-number="8"></td>
+
+                            <td class="code-review blob-code blob-code-addition">
+
+                              <span class="blob-code-inner">+  );</span>
+
+                            </td>
+                          </tr>
+
+
+
+
+                          <tr>
+                            <td class="blob-num blob-num-empty empty-cell"></td>
+                            <td class="blob-code blob-code-empty empty-cell"></td>
+
+                            <td class="blob-num blob-num-addition js-linkable-line-number" id="diff-e14ec8fd2b038fbccea5f8090d26ace4R9" data-line-number="9"></td>
+
+                            <td class="code-review blob-code blob-code-addition">
+
+                              <span class="blob-code-inner">+};</span>
+
+                            </td>
+                          </tr>
+
+
+
+
+                          <tr>
+                            <td class="blob-num blob-num-empty empty-cell"></td>
+                            <td class="blob-code blob-code-empty empty-cell"></td>
+
+                            <td class="blob-num blob-num-addition js-linkable-line-number" id="diff-e14ec8fd2b038fbccea5f8090d26ace4R10" data-line-number="10"></td>
+
+                            <td class="code-review blob-code blob-code-addition">
+
+                              <span class="blob-code-inner">+</span>
+
+                            </td>
+                          </tr>
+
+
+
+
+                          <tr>
+                            <td class="blob-num blob-num-empty empty-cell"></td>
+                            <td class="blob-code blob-code-empty empty-cell"></td>
+
+                            <td class="blob-num blob-num-addition js-linkable-line-number" id="diff-e14ec8fd2b038fbccea5f8090d26ace4R11" data-line-number="11"></td>
+
+                            <td class="code-review blob-code blob-code-addition">
+
+                              <span class="blob-code-inner">+<span class="pl-k">export</span> <span class="pl-c1">default</span> <span class="pl-smi">Index</span>;</span>
+
+                              <span class="no-nl-marker tooltipped tooltipped-n" aria-label="No newline at end of file">
+          <svg class="octicon octicon-no-newline" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16 5v3c0 .55-.45 1-1 1h-3v2L9 8l3-3v2h2V5h2zM8 8c0 2.2-1.8 4-4 4s-4-1.8-4-4 1.8-4 4-4 4 1.8 4 4zM1.5 9.66L5.66 5.5C5.18 5.19 4.61 5 4 5 2.34 5 1 6.34 1 8c0 .61.19 1.17.5 1.66zM7 8c0-.61-.19-1.17-.5-1.66L2.34 10.5c.48.31 1.05.5 1.66.5 1.66 0 3-1.34 3-3z"></path></svg>
+        </span>
+                            </td>
+                          </tr>
+
+
+
+
+
+                          </tbody></table>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div id="diff-0" class="file js-file js-details-container Details show-inline-notes">
+                    <div class="file-header js-file-header" data-path=".gitignore" data-short-path="a084b79" data-anchor="diff-a084b794bc0759e7a6b77810e01874f2">
+                      <div class="file-actions">
+
+        <span class="show-file-notes pt-1">
+          <label data-children-count="1">
+            <input type="checkbox" checked="checked" class="js-toggle-file-notes">
+            Show comments
+          </label>
+        </span>
+
+                        <a href="/rshemesh/next-ssr-workshop/blob/9a26f5bf17f2a7b85ba9de1ccaf46379c94132ee/.gitignore" class="btn btn-sm tooltipped tooltipped-nw" rel="nofollow" aria-label="View the whole file at version 9a26f5b ">View</a>
+
+                        <a class="btn-octicon tooltipped tooltipped-nw" href="https://desktop.github.com" aria-label="Open this file in GitHub Desktop" data-ga-click="Repository, open with desktop, type:mac">
+                          <svg class="octicon octicon-device-desktop" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M15 2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm0 9H1V3h14v8z"></path></svg>
+                        </a>
+
+                        <button type="button" class="btn-octicon p-1 pr-2 js-details-target" aria-label="Toggle diff text" aria-expanded="true">
+                          <svg class="octicon octicon-chevron-down Details-content--shown" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5 11L0 6l1.5-1.5L5 8.25 8.5 4.5 10 6l-5 5z"></path></svg>
+                          <svg class="octicon octicon-chevron-up Details-content--hidden" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M10 10l-1.5 1.5L5 7.75 1.5 11.5 0 10l5-5 5 5z"></path></svg>
+                        </button>
+                      </div>
+                      <div class="file-info">
+                        <span class="diffstat tooltipped tooltipped-e" aria-label="2 additions &amp; 0 deletions">2 <span class="block-diff-added"></span><span class="block-diff-added"></span><span class="block-diff-neutral"></span><span class="block-diff-neutral"></span><span class="block-diff-neutral"></span></span>
+
+                        <a href="#diff-a084b794bc0759e7a6b77810e01874f2" class="link-gray-dark" title=".gitignore">.gitignore</a>
+
+
+                      </div>
+                    </div>
+                    <div class="js-file-content Details-content--shown">
+
+                      <div class="data highlight js-blob-wrapper" style="overflow-x: auto">
+                        <table class="diff-table tab-size  file-diff-split" data-tab-size="8">
+                          <colgroup>
+                            <col width="40">
+                            <col>
+                            <col width="40">
+                            <col>
+                          </colgroup>
+
+                          <tbody><tr class="js-expandable-line" data-position="0">
+                            <td class="blob-num blob-num-expandable" colspan="1">
+                              <a href="#diff-a084b794bc0759e7a6b77810e01874f2" class="diff-expander js-expand" title="Expand" aria-label="Expand" data-url="/rshemesh/next-ssr-workshop/blob_excerpt/f08900bb9890ab7f812733b8dcfb69753d105edd?diff=split&amp;in_wiki_context=&amp;left_hunk_size=3&amp;mode=100644&amp;next_line_num_left=21&amp;next_line_num_right=21&amp;path=.gitignore&amp;prev_line_num_left=&amp;prev_line_num_right=&amp;right_hunk_size=5" data-left-range="1-20" data-right-range="1-20">
+                                <svg class="octicon octicon-unfold" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11.5 7.5L14 10c0 .55-.45 1-1 1H9v-1h3.5l-2-2h-7l-2 2H5v1H1c-.55 0-1-.45-1-1l2.5-2.5L0 5c0-.55.45-1 1-1h4v1H1.5l2 2h7l2-2H9V4h4c.55 0 1 .45 1 1l-2.5 2.5zM6 6h2V3h2L7 0 4 3h2v3zm2 3H6v3H4l3 3 3-3H8V9z"></path></svg>
+                              </a>
+                            </td>
+                            <td class="blob-code blob-code-inner blob-code-hunk" colspan="3">@@ -21,3 +21,5 @@</td>
+                          </tr>
+
+
+                          <tr>
+                            <td class="blob-num blob-num-context js-linkable-line-number" id="diff-a084b794bc0759e7a6b77810e01874f2L21" data-line-number="21"></td>
+
+                            <td class="code-review blob-code blob-code-context">
+
+                              <span class="blob-code-inner"> npm-debug.log*</span>
+
+                            </td>
+
+                            <td class="blob-num blob-num-context js-linkable-line-number" id="diff-a084b794bc0759e7a6b77810e01874f2R21" data-line-number="21"></td>
+
+                            <td class="code-review blob-code blob-code-context">
+
+                              <span class="blob-code-inner"> npm-debug.log*</span>
+
+                            </td>
+                          </tr>
+
+
+
+
+                          <tr>
+                            <td class="blob-num blob-num-context js-linkable-line-number" id="diff-a084b794bc0759e7a6b77810e01874f2L22" data-line-number="22"></td>
+
+                            <td class="code-review blob-code blob-code-context">
+
+                              <span class="blob-code-inner"> yarn-debug.log*</span>
+
+                            </td>
+
+                            <td class="blob-num blob-num-context js-linkable-line-number" id="diff-a084b794bc0759e7a6b77810e01874f2R22" data-line-number="22"></td>
+
+                            <td class="code-review blob-code blob-code-context">
+
+                              <span class="blob-code-inner"> yarn-debug.log*</span>
+
+                            </td>
+                          </tr>
+
+
+
+
+                          <tr>
+                            <td class="blob-num blob-num-context js-linkable-line-number" id="diff-a084b794bc0759e7a6b77810e01874f2L23" data-line-number="23"></td>
+
+                            <td class="code-review blob-code blob-code-context">
+
+                              <span class="blob-code-inner"> yarn-error.log*</span>
+
+                            </td>
+
+                            <td class="blob-num blob-num-context js-linkable-line-number" id="diff-a084b794bc0759e7a6b77810e01874f2R23" data-line-number="23"></td>
+
+                            <td class="code-review blob-code blob-code-context">
+
+                              <span class="blob-code-inner"> yarn-error.log*</span>
+
+                            </td>
+                          </tr>
+
+
+
+
+                          <tr>
+                            <td class="blob-num blob-num-empty empty-cell"></td>
+                            <td class="blob-code blob-code-empty empty-cell"></td>
+
+                            <td class="blob-num blob-num-addition js-linkable-line-number" id="diff-a084b794bc0759e7a6b77810e01874f2R24" data-line-number="24"></td>
+
+                            <td class="code-review blob-code blob-code-addition">
+
+                              <span class="blob-code-inner">+</span>
+
+                            </td>
+                          </tr>
+
+
+
+
+                          <tr>
+                            <td class="blob-num blob-num-empty empty-cell"></td>
+                            <td class="blob-code blob-code-empty empty-cell"></td>
+
+                            <td class="blob-num blob-num-addition js-linkable-line-number" id="diff-a084b794bc0759e7a6b77810e01874f2R25" data-line-number="25"></td>
+
+                            <td class="code-review blob-code blob-code-addition">
+
+                              <span class="blob-code-inner">+.next/</span>
+
+                              <span class="no-nl-marker tooltipped tooltipped-n" aria-label="No newline at end of file">
+          <svg class="octicon octicon-no-newline" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M16 5v3c0 .55-.45 1-1 1h-3v2L9 8l3-3v2h2V5h2zM8 8c0 2.2-1.8 4-4 4s-4-1.8-4-4 1.8-4 4-4 4 1.8 4 4zM1.5 9.66L5.66 5.5C5.18 5.19 4.61 5 4 5 2.34 5 1 6.34 1 8c0 .61.19 1.17.5 1.66zM7 8c0-.61-.19-1.17-.5-1.66L2.34 10.5c.48.31 1.05.5 1.66.5 1.66 0 3-1.34 3-3z"></path></svg>
+        </span>
+                            </td>
+                          </tr>
+
+
+
+
+
+                          </tbody></table>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+              <!--until here-->
+              <!--*****************-->
+
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script
+  src="./assets/frameworks-17b56c01b8d812e11d02f5833a308feac9d67aac79b64cae4189bb7cf5da4b0d.js"></script>
+
+<script
+  src="./assets/github-94090a9be2f425478a8eac2be6ec81f161de17f2c47da5576fd4c772ef0dbe61.js"></script>
+
+
+</body>
+</html>
