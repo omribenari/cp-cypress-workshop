@@ -1,5 +1,3 @@
-/// <reference types="Cypress" />
-
 import { LoginActions as Actions } from '../actions/LoginActions';
 
 const token =
