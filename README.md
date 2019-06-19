@@ -16,7 +16,7 @@ Cypress workshop based on Counterpart Portal (CP)
 
 
 ### Workshop storyline ⏳
-This workshop is divided into small branches built one on top of each other where each branch represent the next part of the story. You can find the detailed files comparison between all the branches [here](https://github.intuit.com/pages/obenari/cp-cypress-workshop/).
+This workshop is divided into small branches built one on top of each other where each branch represent the next part of the story. You can find the detailed [files comparison between all the branches](https://omribenari.github.io/cp-cypress-workshop/).
 
 ### Workshop documentation 📄
 walk-through document can be found [here](https://docs.google.com/document/d/1_R-WqBocUBdpEZcKxoqna31Uzhrpr1pYNO6noM_et2g/edit?usp=sharing).
